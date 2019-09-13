@@ -24,18 +24,24 @@ followed by the specific term they are searching for. Results are logged in the 
 Default terms are built in to each search term if the user does not provide one.
 
 ## Screenshots
-
+Movie with Default (Mr. Nobody):
 ![Movie With Default (Mr. Nobody)](https://github.com/damicose/liri-node-app/blob/master/assets/movie%20default.jpg?raw=true)
 
+Movie with Term Input:
 ![Movie With Query Input](https://github.com/damicose/liri-node-app/blob/master/assets/movie%20query.jpg?raw=true)
 
+Track with Default (The Sign):
 ![Track Default (The Sign)](https://github.com/damicose/liri-node-app/blob/master/assets/spotify%20default.jpg?raw=true)
 
+Track with Term Input:
 ![Track With Query Input](https://github.com/damicose/liri-node-app/blob/master/assets/spotify%20query.jpg?raw=true)
 
+Concert with Default (Cher):
 ![Concert Default (Cher)](https://github.com/damicose/liri-node-app/blob/master/assets/concert%20default%20(cher).jpg?raw=true)
 
+Concert with Term Input:
 ![Concert With Query Input](https://github.com/damicose/liri-node-app/blob/master/assets/concert%20query.jpg?raw=true)
+
 
 ## Technologies
 
