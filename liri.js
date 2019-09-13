@@ -26,9 +26,9 @@ const LIRI = function() {
         let jsonData = response.data;
         // artistData ends up being the string containing the artist data we will print to the console
         let artistData = [
-          "Name: " + jsonData.name,
-          "Location: " + jsonData.genres.join(", "),
-          "Date: " + moment(jsonData.rating.average)
+          "Name: " + jsonData.venue.name,
+          "Location: " + jsonData.venue.city + jsonData.venue.country,
+          "Date: " + moment(jsonData.datetime)
         ].join("\n\n");
   
 console.log(artistData);
@@ -62,14 +62,14 @@ console.log(songData);
           let jsonData = response.data;
           // movieData ends up being the string containing the show data we will print to the console
           let movieData = [
-            "Title: " + jsonData.name,
-            "Year of Release: " + jsonData.genres.join(", "),
-            "IMDB Rating: " + jsonData.rating.average,
-            "Rotten Tomatoes Rating: " + jsonData.network.name,
-            "Country of Production: " + jsonData.summary,
-            "Language(s): " + jsonData.genres.join(", "),
-            "Plot Summary: " + jsonData.rating.average,
-            "Actors: " + jsonData.network.name
+            "Title: " + jsonData.Title,
+            "Year of Release: " + jsonData.Year,
+            "IMDB Rating: " + jsonData.Ratings[0].Value,
+            "Rotten Tomatoes Rating: " + jsonData.Ratings[1].Value,
+            "Country of Production: " + jsonData.Country,
+            "Language(s): " + jsonData.Language,
+            "Plot Summary: " + jsonData.Plot,
+            "Actors: " + jsonData.Actors.join(", ")
           ].join("\n\n");
     
 console.log(movieData);
