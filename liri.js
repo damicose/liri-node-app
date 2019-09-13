@@ -7,7 +7,7 @@ const keys = require("./keys.js");
 // VVV Uncomment when done testing!!!!
 // const spotify = new Spotify(keys.spotify);
 
-// Here thar be dragons
+// Here thar be dragons~~
 
 const axios = require("axios");
 
@@ -25,11 +25,14 @@ const LIRI = function() {
       axios.get(URL).then(function(response) {
         // parse the response body (string) to a JSON object
         const jsonData = response.data;
+        // For testing
+        console.log(jsonData[0]);
+
         // artistData ends up being the string containing the artist data we will print to the console
         const artistData = [
-          "Name: " + jsonData.venue.name,
-          "Location: " + jsonData.venue.city + jsonData.venue.country,
-          "Date: " + moment(jsonData.datetime)
+          "Name: " + jsonData[0].venue.name,
+          "Location: " + jsonData[0].venue.city + ", " + jsonData[0].venue.country,
+          "Date: " + moment(jsonData[0].datetime).format("MMMM Do YYYY")
         ].join("\n\n");
   
 console.log(artistData);
@@ -42,6 +45,9 @@ console.log(artistData);
         axios.get(URL).then(function(response) {
           // parse the response body (string) to a JSON object
           const jsonData = response.data;
+        //   For testing
+        console.log(songData);
+
           // songData ends up being the string containing the show data we will print to the console
           const songData = [
             "Show: " + jsonData.name,
@@ -61,6 +67,7 @@ console.log(songData);
         axios.get(URL).then(function(response) {
           // parse the response body (string) to a JSON object
           const jsonData = response.data;
+        //   For testing
           console.log(jsonData);
           // movieData ends up being the string containing the show data we will print to the console
           const movieData = [
