@@ -21,7 +21,7 @@ const LIRI = function () {
             // parse the response body (string) to a JSON object
             const jsonData = response.data;
             // For testing
-            console.log(jsonData[0]);
+            // console.log(jsonData[0]);
 
             // artistData ends up being the string containing the artist data we will print to the console
             const artistData = [
@@ -62,7 +62,7 @@ const jsonData = data.tracks.items[0];
             // parse the response body (string) to a JSON object
             const jsonData = response.data;
             //   For testing
-            console.log(jsonData);
+            // console.log(jsonData);
             // movieData ends up being the string containing the show data we will print to the console
             const movieData = [
                 "Title: " + jsonData.Title,
@@ -79,24 +79,24 @@ const jsonData = data.tracks.items[0];
         });
     };
 
-    this.doIT = function (it) {
-        const URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
+    // this.doIt = function () {
+    //     // Rejiggered from Section 10 Activity 12
+    //     fs.readFile("random.txt", "utf8", function(error, data) {
 
-        axios.get(URL).then(function (response) {
-            // parse the response body (string) to a JSON object
-            const jsonData = response.data;
-            // showData ends up being the string containing the show data we will print to the console
-            const showData = [
-                "Show: " + jsonData.name,
-                "Genre(s): " + jsonData.genres.join(", "),
-                "Rating: " + jsonData.rating.average,
-                "Network: " + jsonData.network.name,
-                "Summary: " + jsonData.summary
-            ].join("\n\n");
+    //         // If the code experiences any errors it will log the error to the console.
+    //         if (error) {
+    //           return console.log(error);
+    //         }
 
-            console.log();
-        });
-    };
+    //         // Then split it by commas (to make it more readable)
+    //         var dataArr = data.split(",");
+          
+    //         // We will then re-display the content as an array for later use. sike
+    //         search = (dataArr[0]);
+    //         term = (dataArr[1]);
+          
+    //       });
+    // };
 
 };
 

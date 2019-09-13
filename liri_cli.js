@@ -4,7 +4,7 @@ const LIRI = require("./liri");
 
 const liri = new LIRI();
 
-const search = process.argv[2];
+let search = process.argv[2];
 
 let term = process.argv.slice(3).join(" ");
 
@@ -22,6 +22,23 @@ if (!term && search === "movie-this") {
   //   Added artist to query otherwise it pulls a Harry Styles song :|
     liri.findConcert(term);
 }
+else if ((search === "do-what-it-says")) {
+    console.log("Indecision may or may not be my problem. ...");
+    fs.readFile("random.txt", "utf8", function(error, data) {
+
+        // If the code experiences any errors it will log the error to the console.
+        if (error) {
+          return console.log(error);
+        }
+
+        // Then split it by commas (to make it more readable)
+        var dataArr = data.split(",");
+      
+        search = (dataArr[0]);
+        term = (dataArr[1]);
+      
+      });
+}
 
 else if (search === "concert-this") {
     console.log("Searching for Concerts");
@@ -32,10 +49,6 @@ else if (search === "concert-this") {
   } else if (search === "movie-this") {
       console.log("Searching for Movies");
       liri.findMovie(term);
-  } else if (search === "do-what-it-says") {
-      console.log("Indecision may or may not be my problem. ...");
-      liri.doIt();
-  }
+  } 
 
-//   Add else/if for defaulting to Mr. Nobody (?)
   
