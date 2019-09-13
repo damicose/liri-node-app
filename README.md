@@ -3,9 +3,9 @@
 ## Function
 This LIRI app is designed to take two inputs ('search' and 'term') and then provide information based on the query's specifics. Possible outputs are:
 
-*Next concert details for an artist
-*Basic information for a track
-*Basic information for a movie
+* Next concert details for an artist
+* Basic information for a track
+* Basic information for a movie
 
 No purpose beyond sating curiousity.
 
@@ -15,9 +15,9 @@ App is organized into two main .js files that perform the bulk of the heavy lift
 ## Directions
 From the command line interface users will enter "node " followed by one of three possible search terms:
 
-*concert-this
-*spotify-this-track
-*movie-this
+* concert-this
+* spotify-this-track
+* movie-this
 
 followed by the specific term they are searching for. Results are logged in the command line interface.
 
@@ -39,16 +39,16 @@ Default terms are built in to each search term if the user does not provide one.
 
 ## Technologies
 
-*Javascript
-*Node
-    *axios module
-    *moment module
-    *spotify api module
-    *fs module (forthcoming feature)
-*APIs
-    *Spotify
-    *BandsInTown
-    *OMDB
+* Javascript
+* Node
+    * axios module
+    * moment module
+    * spotify api module
+    * fs module (forthcoming feature)
+* APIs
+    * Spotify
+    * BandsInTown
+    * OMDB
 
 ## State your role in the app development
 
