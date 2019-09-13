@@ -22,4 +22,6 @@ if (search === "concert-this") {
       console.log("Indecision may or may not be my problem. ...");
       liri.doIt();
   }
+
+//   Add else/if for defaulting to Mr. Nobody (?)
   
