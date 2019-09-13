@@ -17,6 +17,11 @@ if (!term && search === "movie-this") {
     //   Added artist to query otherwise it pulls a Harry Styles song :|
       liri.findSong(term);
   }
+  else if (!term && search === "concert-this") {
+    term = "cher";
+  //   Added artist to query otherwise it pulls a Harry Styles song :|
+    liri.findConcert(term);
+}
 
 else if (search === "concert-this") {
     console.log("Searching for Concerts");
