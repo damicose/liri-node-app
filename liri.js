@@ -4,7 +4,8 @@ require("dotenv").config();
 
 const keys = require("./keys.js");
 
-const spotify = new Spotify(keys.spotify);
+// VVV Uncomment when done testing!!!!
+// const spotify = new Spotify(keys.spotify);
 
 // Here thar be dragons
 
@@ -19,13 +20,13 @@ const Spotify = require('node-spotify-api');
 const LIRI = function() {
   
     this.findConcert = function(artist) {
-      let URL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+      const URL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
   
       axios.get(URL).then(function(response) {
         // parse the response body (string) to a JSON object
-        let jsonData = response.data;
+        const jsonData = response.data;
         // artistData ends up being the string containing the artist data we will print to the console
-        let artistData = [
+        const artistData = [
           "Name: " + jsonData.venue.name,
           "Location: " + jsonData.venue.city + jsonData.venue.country,
           "Date: " + moment(jsonData.datetime)
@@ -36,13 +37,13 @@ console.log(artistData);
     };
 
     this.findSong = function(song) {
-        let URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
+        const URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
     
         axios.get(URL).then(function(response) {
           // parse the response body (string) to a JSON object
-          let jsonData = response.data;
+          const jsonData = response.data;
           // songData ends up being the string containing the show data we will print to the console
-          let songData = [
+          const songData = [
             "Show: " + jsonData.name,
             "Genre(s): " + jsonData.genres.join(", "),
             "Rating: " + jsonData.rating.average,
@@ -55,13 +56,14 @@ console.log(songData);
       };
 
       this.findMovie = function(movie) {
-        let URL = "http://www.omdbapi.com/?t=" + movie + "&plot=short&apikey=trilogy";
+        const URL = "http://www.omdbapi.com/?t=" + movie + "&plot=short&apikey=trilogy";
     
         axios.get(URL).then(function(response) {
           // parse the response body (string) to a JSON object
-          let jsonData = response.data;
+          const jsonData = response.data;
+          console.log(jsonData);
           // movieData ends up being the string containing the show data we will print to the console
-          let movieData = [
+          const movieData = [
             "Title: " + jsonData.Title,
             "Year of Release: " + jsonData.Year,
             "IMDB Rating: " + jsonData.Ratings[0].Value,
@@ -69,7 +71,7 @@ console.log(songData);
             "Country of Production: " + jsonData.Country,
             "Language(s): " + jsonData.Language,
             "Plot Summary: " + jsonData.Plot,
-            "Actors: " + jsonData.Actors.join(", ")
+            "Actors: " + jsonData.Actors
           ].join("\n\n");
     
 console.log(movieData);
@@ -77,13 +79,13 @@ console.log(movieData);
       };
 
       this.doIT = function(it) {
-        let URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
+        const URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
     
         axios.get(URL).then(function(response) {
           // parse the response body (string) to a JSON object
-          let jsonData = response.data;
+          const jsonData = response.data;
           // showData ends up being the string containing the show data we will print to the console
-          let showData = [
+          const showData = [
             "Show: " + jsonData.name,
             "Genre(s): " + jsonData.genres.join(", "),
             "Rating: " + jsonData.rating.average,

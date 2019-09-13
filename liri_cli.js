@@ -1,13 +1,16 @@
 // Borrowing basic structure from Section 11 Activities 11-14
 
-// const inquirer = require("inquirer");
 const LIRI = require("./liri");
 
 const liri = new LIRI();
 
-let search = process.argv[2];
+const search = process.argv[2];
 
 let term = process.argv.slice(3).join(" ");
+
+if (!term) {
+    term = "Mr. Nobody";
+  }
 
 if (search === "concert-this") {
     console.log("Searching for Concerts");
