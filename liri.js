@@ -6,8 +6,6 @@ const keys = require("./keys.js");
 
 const axios = require("axios");
 
-const fs = require("fs");
-
 const moment = require("moment");
 
 const Spotify = require('node-spotify-api');

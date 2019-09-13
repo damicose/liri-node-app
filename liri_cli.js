@@ -1,4 +1,5 @@
 // Borrowing basic structure from Section 11 Activities 11-14
+const fs = require("fs");
 
 const LIRI = require("./liri");
 
@@ -8,7 +9,24 @@ let search = process.argv[2];
 
 let term = process.argv.slice(3).join(" ");
 
-if (!term && search === "movie-this") {
+if ((search === "do-what-it-says")) {
+    console.log("Indecision may or may not be my problem....");
+    fs.readFile("random.txt", "utf8", function(error, data) {
+
+        if (error) {
+          return console.log(error);
+        }
+
+        const dataArr = data.split(",");
+      
+        search = (dataArr[0]);
+        term = (dataArr[1]);
+    //   Not sure what function (?) to call here to make it use the updated variables
+      });
+      
+}
+
+else if (!term && search === "movie-this") {
     term = "Mr. Nobody";
     liri.findMovie(term);
   }
@@ -21,23 +39,6 @@ if (!term && search === "movie-this") {
     term = "cher";
   //   Added artist to query otherwise it pulls a Harry Styles song :|
     liri.findConcert(term);
-}
-else if ((search === "do-what-it-says")) {
-    console.log("Indecision may or may not be my problem. ...");
-    fs.readFile("random.txt", "utf8", function(error, data) {
-
-        // If the code experiences any errors it will log the error to the console.
-        if (error) {
-          return console.log(error);
-        }
-
-        // Then split it by commas (to make it more readable)
-        var dataArr = data.split(",");
-      
-        search = (dataArr[0]);
-        term = (dataArr[1]);
-      
-      });
 }
 
 else if (search === "concert-this") {
