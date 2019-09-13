@@ -8,11 +8,17 @@ const search = process.argv[2];
 
 let term = process.argv.slice(3).join(" ");
 
-if (!term) {
+if (!term && search === "movie-this") {
     term = "Mr. Nobody";
+    liri.findMovie(term);
+  }
+  else if (!term && search === "spotify-this-song") {
+      term = "the sign ace of base";
+    //   Added artist to query otherwise it pulls a Harry Styles song :|
+      liri.findSong(term);
   }
 
-if (search === "concert-this") {
+else if (search === "concert-this") {
     console.log("Searching for Concerts");
     liri.findConcert(term);
   } else if (search === "spotify-this-song") {
